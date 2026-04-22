@@ -37,3 +37,54 @@ Decision: Where to place most of the processing
 Rationale:
 Thin client → server does most work (easy to maintain)
 Thick client → client handles more logic (better performance, less server load)
+## SIGNIFICANT TRADE-OFFS OR CHALLENGES 
+1. Single Point of Failure
+In a typical client-server system, the server is central.
+If the server crashes → all clients are affected
+System availability depends heavily on server uptime
+Example:
+If your backend server goes down, your mobile/web app becomes unusable.
+Implication:
+You must implement:
+Redundancy (backup servers)
+Fail over mechanisms
+2. Scalability Challenges
+As users increase, the server can become overloaded.
+Too many client requests → slow response time
+Requires more resources (CPU, RAM, bandwidth)
+Solution approaches:
+Load balancing
+Horizontal scaling (multiple servers)
+Caching frequently requested data
+3. Network Dependency & Latency
+Client-server systems rely heavily on network communication.
+Poor internet → slow system performance
+High latency affects user experience
+Example:
+A user in a low-network area may experience delays when fetching data from the server.
+## AREAS WITHIN CLIENT SEVER 
+Pattern 1: Model-View-Controller (MVC)
+What it is:
+MVC separates your system into three parts:
+Model → Data & business logic (usually on the server)
+View → UI (client side)
+Controller → Handles input & communication
+How it fits Client-Server:
+Client (View) → Displays data
+Server (Model + Controller) → Processes and returns data
+Why it is useful:
+Clean separation of concerns
+Easier maintenance
+Allows frontend and backend to evolve independently
+Pattern 2: Singleton Pattern
+What it is:
+Ensures a class has only one instance and provides a global access point.
+Where to use it in Client-Server:
+Database connection manager
+Server configuration manager
+Why it is useful:
+Prevents multiple unnecessary connections
+Saves system resources
+Ensures consistency
+ 
+  
