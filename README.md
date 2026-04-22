@@ -87,4 +87,7 @@ Prevents multiple unnecessary connections
 Saves system resources
 Ensures consistency
  
+  echo "Instructor/Peer Review: Evaluate README.md for completeness, justification, and adherence to design principles." git add .
+  git commit -m"added CLIENT SEVER"
+  git push
   
